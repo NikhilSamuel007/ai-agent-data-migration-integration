@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "entity": "employees",
+  "identity": "email",
+  "fields": {
+    "employee_id": {
+      "type": "string",
+      "required": true
+    },
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "date_of_birth": {
+      "type": "date",
+      "required": true
+    },
+    "department": {
+      "type": "string",
+      "required": false
+    },
+    "employment_status": {
+      "type": "string",
+      "required": true,
+      "enum": [
+        "Active",
+        "Inactive",
+        "Leave"
+      ]
+    },
+    "account_status": {
+      "type": "string",
+      "required": false,
+      "enum": [
+        "Active",
+        "Inactive",
+        "Locked"
+      ],
+      "description": "Optional platform login state, independent of HR employment state."
+    }
+  }
+}

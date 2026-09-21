@@ -1,0 +1,685 @@
+{
+  "at": "2026-09-20T13:13:52.115035+00:00",
+  "policy": "evidence-v3",
+  "limitation": "Small authored regression set, not independent client calibration or an accuracy guarantee.",
+  "model": {
+    "status": "ready",
+    "name": "Xenova/all-MiniLM-L6-v2",
+    "error": null
+  },
+  "llm": {
+    "provider": "Ollama",
+    "model": "qwen2.5:1.5b",
+    "status": "ready",
+    "error": null
+  },
+  "cases": 14,
+  "automatic": 6,
+  "unfamiliarAutomatic": 3,
+  "unsafeAutomatic": 0,
+  "automaticCoverage": 0.42857142857142855,
+  "results": [
+    {
+      "case": {
+        "header": "First Name",
+        "values": [
+          "Ada",
+          "Sarah",
+          "Maya"
+        ],
+        "expected": "first_name",
+        "review": false
+      },
+      "mapping": {
+        "header": "First Name",
+        "field": "first_name",
+        "proposedField": "first_name",
+        "status": "automatic",
+        "confidence": 1.0,
+        "reason": "Unique explicit alias. Values are independently validated after normalization.",
+        "suggestions": [],
+        "evidence": {
+          "alias": true,
+          "patternCompatibility": 1.0,
+          "policy": "alias-v3"
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "dob",
+        "values": [
+          "1990-01-13",
+          "1988-11-21",
+          "1992-05-17"
+        ],
+        "expected": "date_of_birth",
+        "review": false
+      },
+      "mapping": {
+        "header": "dob",
+        "field": "date_of_birth",
+        "proposedField": "date_of_birth",
+        "status": "automatic",
+        "confidence": 1.0,
+        "reason": "Unique explicit alias. Values are independently validated after normalization.",
+        "suggestions": [],
+        "evidence": {
+          "alias": true,
+          "patternCompatibility": 1.0,
+          "policy": "alias-v3"
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "work_email",
+        "values": [
+          "ada@example.com",
+          "sarah@example.com",
+          "maya@example.com"
+        ],
+        "expected": "email",
+        "review": false
+      },
+      "mapping": {
+        "header": "work_email",
+        "field": "email",
+        "proposedField": "email",
+        "status": "automatic",
+        "confidence": 1.0,
+        "reason": "Unique explicit alias. Values are independently validated after normalization.",
+        "suggestions": [],
+        "evidence": {
+          "alias": true,
+          "patternCompatibility": 1.0,
+          "policy": "alias-v3"
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Employee work email address",
+        "values": [
+          "ada@example.com",
+          "sarah@example.com",
+          "maya@example.com"
+        ],
+        "expected": "email",
+        "review": false
+      },
+      "mapping": {
+        "header": "Employee work email address",
+        "field": "email",
+        "proposedField": "email",
+        "status": "automatic",
+        "confidence": 1.0,
+        "reason": "Corroborating model and value evidence meet all policy gates.",
+        "suggestions": [
+          {
+            "field": "email",
+            "score": 1.0
+          },
+          {
+            "field": "employee_id",
+            "score": 0.560135498889459
+          },
+          {
+            "field": "first_name",
+            "score": 0.42216325386749987
+          }
+        ],
+        "llmProposal": {
+          "target_field": "email",
+          "confidence": 1.0,
+          "reason": "The source column is directly related to the email address, which is a required field for the target fields."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 1.0,
+          "topTwoMargin": 0.44,
+          "llmAgreement": true,
+          "llmConfidence": 1.0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": false,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Staff identification number",
+        "values": [
+          "E001",
+          "E002",
+          "E003"
+        ],
+        "expected": "employee_id",
+        "review": false
+      },
+      "mapping": {
+        "header": "Staff identification number",
+        "field": "employee_id",
+        "proposedField": "employee_id",
+        "status": "automatic",
+        "confidence": 0.951,
+        "reason": "Corroborating model and value evidence meet all policy gates.",
+        "suggestions": [
+          {
+            "field": "employee_id",
+            "score": 0.9244327116826213
+          },
+          {
+            "field": "email",
+            "score": 0.45330982601824765
+          },
+          {
+            "field": "department",
+            "score": 0.44631017887095903
+          }
+        ],
+        "llmProposal": {
+          "target_field": "employee_id",
+          "confidence": 1.0,
+          "reason": "The source column 'Staff identification number' is directly mapped to the 'employee_id' target field, which is the primary key for employee records."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 0.924,
+          "topTwoMargin": 0.471,
+          "llmAgreement": true,
+          "llmConfidence": 1.0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": false,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Employee birthday",
+        "values": [
+          "1990-01-13",
+          "1988-11-21",
+          "1992-05-17"
+        ],
+        "expected": "date_of_birth",
+        "review": false
+      },
+      "mapping": {
+        "header": "Employee birthday",
+        "field": "date_of_birth",
+        "proposedField": "date_of_birth",
+        "status": "automatic",
+        "confidence": 0.932,
+        "reason": "Corroborating model and value evidence meet all policy gates.",
+        "suggestions": [
+          {
+            "field": "date_of_birth",
+            "score": 0.8959518318857866
+          },
+          {
+            "field": "employee_id",
+            "score": 0.5215153961498946
+          },
+          {
+            "field": "first_name",
+            "score": 0.5164207849925622
+          }
+        ],
+        "llmProposal": {
+          "target_field": "date_of_birth",
+          "confidence": 1.0,
+          "reason": "The source column 'Employee birthday' is directly related to the 'date_of_birth' field in the target fields, which is the most relevant and accurate representation of the employee's birth date."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 0.896,
+          "topTwoMargin": 0.374,
+          "llmAgreement": true,
+          "llmConfidence": 1.0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": false,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Business group",
+        "values": [
+          "Engineering",
+          "Sales",
+          "Finance"
+        ],
+        "expected": "department",
+        "review": false
+      },
+      "mapping": {
+        "header": "Business group",
+        "field": null,
+        "proposedField": "department",
+        "status": "pending",
+        "confidence": 0.612,
+        "reason": "Review required: ambiguous header, weak or conflicting evidence, competing target, or insufficient samples.",
+        "suggestions": [
+          {
+            "field": "department",
+            "score": 0.6337811976550496
+          },
+          {
+            "field": "employee_id",
+            "score": 0.3064532133034622
+          },
+          {
+            "field": "email",
+            "score": 0.2302177881315165
+          }
+        ],
+        "llmProposal": {
+          "target_field": "employee_id",
+          "confidence": 1.0,
+          "reason": "The source column 'Business group' is directly mapped to the 'employee_id' target field, which is the primary key for employee records."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 0.634,
+          "topTwoMargin": 0.327,
+          "llmAgreement": false,
+          "llmConfidence": 0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": false,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Employee given name",
+        "values": [
+          "Ada",
+          "Sarah",
+          "Maya"
+        ],
+        "expected": "first_name",
+        "review": false
+      },
+      "mapping": {
+        "header": "Employee given name",
+        "field": null,
+        "proposedField": "first_name",
+        "status": "pending",
+        "confidence": 0.759,
+        "reason": "Review required: ambiguous header, weak or conflicting evidence, competing target, or insufficient samples.",
+        "suggestions": [
+          {
+            "field": "first_name",
+            "score": 0.8597086719393392
+          },
+          {
+            "field": "last_name",
+            "score": 0.6111898974644727
+          },
+          {
+            "field": "employee_id",
+            "score": 0.5573833642355228
+          }
+        ],
+        "llmProposal": {
+          "target_field": "employee_id",
+          "confidence": 1.0,
+          "reason": "The source column 'Employee given name' is directly mapped to the 'employee_id' target field, which is a unique identifier for an employee."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 0.86,
+          "topTwoMargin": 0.249,
+          "llmAgreement": false,
+          "llmConfidence": 0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": false,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Family surname",
+        "values": [
+          "Lovelace",
+          "Jones",
+          "Patel"
+        ],
+        "expected": "last_name",
+        "review": false
+      },
+      "mapping": {
+        "header": "Family surname",
+        "field": null,
+        "proposedField": "last_name",
+        "status": "pending",
+        "confidence": 0.693,
+        "reason": "Review required: ambiguous header, weak or conflicting evidence, competing target, or insufficient samples.",
+        "suggestions": [
+          {
+            "field": "last_name",
+            "score": 0.7591054559863297
+          },
+          {
+            "field": "first_name",
+            "score": 0.4695136553312767
+          },
+          {
+            "field": "employee_id",
+            "score": 0.17883893363261755
+          }
+        ],
+        "llmProposal": {
+          "target_field": "employee_id",
+          "confidence": 1.0,
+          "reason": "The source column 'Family surname' is directly mapped to the 'employee_id' field, which is a unique identifier for an employee."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 0.759,
+          "topTwoMargin": 0.29,
+          "llmAgreement": false,
+          "llmConfidence": 0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": false,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Status",
+        "values": [
+          "Active",
+          "Inactive",
+          "Active"
+        ],
+        "expected": null,
+        "review": true
+      },
+      "mapping": {
+        "header": "Status",
+        "field": null,
+        "proposedField": "employment_status",
+        "status": "pending",
+        "confidence": 0.549,
+        "reason": "Status may describe HR employment or platform account access. Active and Inactive occur in both; confirm the source meaning.",
+        "suggestions": [
+          {
+            "field": "employment_status",
+            "score": 0.3066837403217903
+          },
+          {
+            "field": "account_status",
+            "score": 0.24346979294710086
+          },
+          {
+            "field": "employee_id",
+            "score": 0.19988025461499515
+          }
+        ],
+        "llmProposal": {
+          "target_field": "employment_status",
+          "confidence": 1.0,
+          "reason": "The 'Status' column is directly mapped to the 'employment_status' field, which is the primary field used to describe the employment status of an employee."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 0.307,
+          "topTwoMargin": 0.063,
+          "llmAgreement": true,
+          "llmConfidence": 1.0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": true,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Date",
+        "values": [
+          "1990-01-13",
+          "1988-11-21",
+          "1992-05-17"
+        ],
+        "expected": null,
+        "review": true
+      },
+      "mapping": {
+        "header": "Date",
+        "field": null,
+        "proposedField": "date_of_birth",
+        "status": "pending",
+        "confidence": 0.462,
+        "reason": "Review required: ambiguous header, weak or conflicting evidence, competing target, or insufficient samples.",
+        "suggestions": [
+          {
+            "field": "date_of_birth",
+            "score": 0.4028215393627154
+          },
+          {
+            "field": "employee_id",
+            "score": 0.12917267274675606
+          },
+          {
+            "field": "department",
+            "score": 0.12519668126323438
+          }
+        ],
+        "llmProposal": {
+          "target_field": "email",
+          "confidence": 1.0,
+          "reason": "The source column 'Date' is mapped to the target field 'email' as it is the only field that can be used to generate an email address from the provided date of birth pattern."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 0.403,
+          "topTwoMargin": 0.274,
+          "llmAgreement": false,
+          "llmConfidence": 0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": true,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Contact",
+        "values": [
+          "ada@example.com",
+          "sarah@example.com",
+          "maya@example.com"
+        ],
+        "expected": null,
+        "review": true
+      },
+      "mapping": {
+        "header": "Contact",
+        "field": null,
+        "proposedField": "email",
+        "status": "pending",
+        "confidence": 0.516,
+        "reason": "Review required: ambiguous header, weak or conflicting evidence, competing target, or insufficient samples.",
+        "suggestions": [
+          {
+            "field": "email",
+            "score": 0.2550214537821629
+          },
+          {
+            "field": "department",
+            "score": 0.24345274438339903
+          },
+          {
+            "field": "employee_id",
+            "score": 0.20651119230114745
+          }
+        ],
+        "llmProposal": {
+          "target_field": "email",
+          "confidence": 1.0,
+          "reason": "The source column 'Contact' contains email addresses, which are directly mapped to the target field 'email'."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 0.255,
+          "topTwoMargin": 0.012,
+          "llmAgreement": true,
+          "llmConfidence": 1.0,
+          "valueCompatibility": 1.0,
+          "samples": 3,
+          "ambiguousHeader": true,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Employee work email address",
+        "values": [
+          "Engineering",
+          "Sales",
+          "Finance"
+        ],
+        "expected": null,
+        "review": true
+      },
+      "mapping": {
+        "header": "Employee work email address",
+        "field": null,
+        "proposedField": "email",
+        "status": "pending",
+        "confidence": 0.8,
+        "reason": "Review required: ambiguous header, weak or conflicting evidence, competing target, or insufficient samples.",
+        "suggestions": [
+          {
+            "field": "email",
+            "score": 1.0
+          },
+          {
+            "field": "employee_id",
+            "score": 0.560135498889459
+          },
+          {
+            "field": "first_name",
+            "score": 0.42216325386749987
+          }
+        ],
+        "llmProposal": {
+          "target_field": "email",
+          "confidence": 1.0,
+          "reason": "The email address is the primary identifier for the employee and is therefore the most relevant field to map the source column to."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 1.0,
+          "topTwoMargin": 0.44,
+          "llmAgreement": true,
+          "llmConfidence": 1.0,
+          "valueCompatibility": 0.0,
+          "samples": 3,
+          "ambiguousHeader": false,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    },
+    {
+      "case": {
+        "header": "Employee work email address",
+        "values": [
+          "ada@example.com"
+        ],
+        "expected": "email",
+        "review": true
+      },
+      "mapping": {
+        "header": "Employee work email address",
+        "field": null,
+        "proposedField": "email",
+        "status": "pending",
+        "confidence": 1.0,
+        "reason": "Review required: ambiguous header, weak or conflicting evidence, competing target, or insufficient samples.",
+        "suggestions": [
+          {
+            "field": "email",
+            "score": 1.0
+          },
+          {
+            "field": "employee_id",
+            "score": 0.560135498889459
+          },
+          {
+            "field": "first_name",
+            "score": 0.42216325386749987
+          }
+        ],
+        "llmProposal": {
+          "target_field": "email",
+          "confidence": 1.0,
+          "reason": "The source column is explicitly labeled as 'Employee work email address', which is directly mapped to the 'email' field in the target."
+        },
+        "evidence": {
+          "alias": false,
+          "semanticSimilarity": 1.0,
+          "topTwoMargin": 0.44,
+          "llmAgreement": true,
+          "llmConfidence": 1.0,
+          "valueCompatibility": 1.0,
+          "samples": 1,
+          "ambiguousHeader": false,
+          "policy": "evidence-v3",
+          "providerStatus": "ready",
+          "providerError": null
+        }
+      },
+      "safe": true
+    }
+  ]
+}

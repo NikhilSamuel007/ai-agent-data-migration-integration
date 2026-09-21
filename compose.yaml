@@ -1,0 +1,39 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "127.0.0.1:${RELAY_BACKEND_PORT:-8000}:8000"
+    environment:
+      FRONTEND_ORIGINS: http://localhost:${RELAY_FRONTEND_PORT:-3000},http://127.0.0.1:${RELAY_FRONTEND_PORT:-3000}
+      OLLAMA_URL: http://ollama:11434
+      OLLAMA_MODEL: qwen2.5:1.5b
+    volumes:
+      - relay_data:/app/data
+      - relay_models:/app/.cache
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 30s
+  ollama:
+    image: ollama/ollama:latest
+    profiles: [ai]
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+    stop_grace_period: 30s
+  frontend:
+    build: ./frontend
+    ports:
+      - "127.0.0.1:${RELAY_FRONTEND_PORT:-3000}:3000"
+    environment:
+      # This is the browser-reachable URL, not the Docker service hostname.
+      API_BASE_URL: http://localhost:${RELAY_BACKEND_PORT:-8000}
+    depends_on:
+      backend:
+        condition: service_healthy
+    init: true
+    restart: unless-stopped
+
+volumes:
+  relay_data:
+  relay_models:
+  ollama_models:

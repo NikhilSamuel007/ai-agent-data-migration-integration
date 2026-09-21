@@ -1,0 +1,14 @@
+*
+!Dockerfile
+!.dockerignore
+!server.py
+!package.json
+!pnpm-lock.yaml
+!pnpm-workspace.yaml
+!tsconfig.json
+!vite.config.ts
+!index.html
+!src/
+!src/**
+!public/
+!public/**

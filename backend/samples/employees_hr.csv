@@ -1,0 +1,4 @@
+Employee ID,First Name,Last Name,Email,Date of Birth,Department,Employment Status
+E001, John ,Smith, JOHN@EXAMPLE.COM ,1990/03/12,Engineering,active
+E002,Sarah,Jones,sarah@example.com,1992-05-17,Sales,Active
+E003,Michael,Brown,michael@example.com,21/11/1988,Engineering,Inactive

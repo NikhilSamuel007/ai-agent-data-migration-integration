@@ -1,0 +1,5 @@
+emp_id,fname,lname,work_email,dob,dept,employment_status
+E001, John ,Smith, JOHN@EXAMPLE.COM ,1990/03/12,Engineering,active
+E004,Robert,Davis,robert@example.com,1987/09/21,Finance,Active
+E005,David,Wilson,david@example.com,1990-11-02,Sales,Leave
+E006,Maya,Patel,maya@example.com,1991-01-13,Finance,Active

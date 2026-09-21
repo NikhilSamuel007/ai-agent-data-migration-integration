@@ -1,0 +1,12 @@
+*
+!Dockerfile
+!.dockerignore
+!requirements.txt
+!server.py
+!schema.json
+!relay/
+!relay/**
+!samples/
+!samples/**
+**/__pycache__/
+**/*.pyc

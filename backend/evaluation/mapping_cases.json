@@ -1,0 +1,16 @@
+[
+  {"header":"First Name","values":["Ada","Sarah","Maya"],"expected":"first_name","review":false},
+  {"header":"dob","values":["1990-01-13","1988-11-21","1992-05-17"],"expected":"date_of_birth","review":false},
+  {"header":"work_email","values":["ada@example.com","sarah@example.com","maya@example.com"],"expected":"email","review":false},
+  {"header":"Employee work email address","values":["ada@example.com","sarah@example.com","maya@example.com"],"expected":"email","review":false},
+  {"header":"Staff identification number","values":["E001","E002","E003"],"expected":"employee_id","review":false},
+  {"header":"Employee birthday","values":["1990-01-13","1988-11-21","1992-05-17"],"expected":"date_of_birth","review":false},
+  {"header":"Business group","values":["Engineering","Sales","Finance"],"expected":"department","review":false},
+  {"header":"Employee given name","values":["Ada","Sarah","Maya"],"expected":"first_name","review":false},
+  {"header":"Family surname","values":["Lovelace","Jones","Patel"],"expected":"last_name","review":false},
+  {"header":"Status","values":["Active","Inactive","Active"],"expected":null,"review":true},
+  {"header":"Date","values":["1990-01-13","1988-11-21","1992-05-17"],"expected":null,"review":true},
+  {"header":"Contact","values":["ada@example.com","sarah@example.com","maya@example.com"],"expected":null,"review":true},
+  {"header":"Employee work email address","values":["Engineering","Sales","Finance"],"expected":null,"review":true},
+  {"header":"Employee work email address","values":["ada@example.com"],"expected":"email","review":true}
+]

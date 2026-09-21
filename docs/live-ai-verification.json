@@ -1,0 +1,602 @@
+{
+  "runId": "6f20b0d4-283e-46ac-b117-79101b75d343",
+  "status": "complete",
+  "targetCount": 3,
+  "mappings": [
+    {
+      "header": "Staff identification number",
+      "field": "employee_id",
+      "proposedField": "employee_id",
+      "status": "automatic",
+      "confidence": 0.951,
+      "reason": "Corroborating model and value evidence meet all policy gates.",
+      "suggestions": [
+        {
+          "field": "employee_id",
+          "score": 0.9244327116826213
+        },
+        {
+          "field": "email",
+          "score": 0.45330982601824765
+        },
+        {
+          "field": "department",
+          "score": 0.44631017887095903
+        }
+      ],
+      "llmProposal": {
+        "target_field": "employee_id",
+        "confidence": 1.0,
+        "reason": "The source column 'Staff identification number' is directly mapped to the 'employee_id' field, which is the primary key for employee records."
+      },
+      "evidence": {
+        "alias": false,
+        "semanticSimilarity": 0.924,
+        "topTwoMargin": 0.471,
+        "llmAgreement": true,
+        "llmConfidence": 1.0,
+        "valueCompatibility": 1.0,
+        "samples": 3,
+        "ambiguousHeader": false,
+        "policy": "evidence-v3",
+        "providerStatus": "ready",
+        "providerError": null
+      }
+    },
+    {
+      "header": "First Name",
+      "field": "first_name",
+      "proposedField": "first_name",
+      "status": "automatic",
+      "confidence": 1.0,
+      "reason": "Unique explicit alias. Values are independently validated after normalization.",
+      "suggestions": [],
+      "evidence": {
+        "alias": true,
+        "patternCompatibility": 1.0,
+        "policy": "alias-v2"
+      }
+    },
+    {
+      "header": "Last Name",
+      "field": "last_name",
+      "proposedField": "last_name",
+      "status": "automatic",
+      "confidence": 1.0,
+      "reason": "Unique explicit alias. Values are independently validated after normalization.",
+      "suggestions": [],
+      "evidence": {
+        "alias": true,
+        "patternCompatibility": 1.0,
+        "policy": "alias-v2"
+      }
+    },
+    {
+      "header": "Employee work email address",
+      "field": "email",
+      "proposedField": "email",
+      "status": "automatic",
+      "confidence": 1.0,
+      "reason": "Corroborating model and value evidence meet all policy gates.",
+      "suggestions": [
+        {
+          "field": "email",
+          "score": 1.0
+        },
+        {
+          "field": "employee_id",
+          "score": 0.560135498889459
+        },
+        {
+          "field": "first_name",
+          "score": 0.42216325386749987
+        }
+      ],
+      "llmProposal": {
+        "target_field": "email",
+        "confidence": 1.0,
+        "reason": "The source column is directly related to the email address, which is a required field for the target fields."
+      },
+      "evidence": {
+        "alias": false,
+        "semanticSimilarity": 1.0,
+        "topTwoMargin": 0.44,
+        "llmAgreement": true,
+        "llmConfidence": 1.0,
+        "valueCompatibility": 1.0,
+        "samples": 3,
+        "ambiguousHeader": false,
+        "policy": "evidence-v3",
+        "providerStatus": "ready",
+        "providerError": null
+      }
+    },
+    {
+      "header": "Employee birthday",
+      "field": "date_of_birth",
+      "proposedField": "date_of_birth",
+      "status": "automatic",
+      "confidence": 0.932,
+      "reason": "Corroborating model and value evidence meet all policy gates.",
+      "suggestions": [
+        {
+          "field": "date_of_birth",
+          "score": 0.8959518318857866
+        },
+        {
+          "field": "employee_id",
+          "score": 0.5215153961498946
+        },
+        {
+          "field": "first_name",
+          "score": 0.5164207849925622
+        }
+      ],
+      "llmProposal": {
+        "target_field": "date_of_birth",
+        "confidence": 1.0,
+        "reason": "The source column 'Employee birthday' is directly mapped to the target field 'date_of_birth' as it pertains to the employee's birth date, which is a specific and unambiguous field in the context of employment and account status."
+      },
+      "evidence": {
+        "alias": false,
+        "semanticSimilarity": 0.896,
+        "topTwoMargin": 0.374,
+        "llmAgreement": true,
+        "llmConfidence": 1.0,
+        "valueCompatibility": 1.0,
+        "samples": 3,
+        "ambiguousHeader": false,
+        "policy": "evidence-v3",
+        "providerStatus": "ready",
+        "providerError": null
+      }
+    },
+    {
+      "header": "Department",
+      "field": "department",
+      "proposedField": "department",
+      "status": "automatic",
+      "confidence": 1.0,
+      "reason": "Unique explicit alias. Values are independently validated after normalization.",
+      "suggestions": [],
+      "evidence": {
+        "alias": true,
+        "patternCompatibility": 1.0,
+        "policy": "alias-v2"
+      }
+    },
+    {
+      "header": "Employment Status",
+      "field": "employment_status",
+      "proposedField": "employment_status",
+      "status": "automatic",
+      "confidence": 1.0,
+      "reason": "Unique explicit alias. Values are independently validated after normalization.",
+      "suggestions": [],
+      "evidence": {
+        "alias": true,
+        "patternCompatibility": 1.0,
+        "policy": "alias-v2"
+      }
+    }
+  ],
+  "events": [
+    {
+      "seq": 49,
+      "run_id": "6f20b0d4-283e-46ac-b117-79101b75d343",
+      "at": "2026-09-20T13:14:13.146Z",
+      "action": "Record pushed",
+      "detail": {
+        "recordId": "26c1a16e-3748-4779-bd52-86e1725ec42b",
+        "email": "maya.auto@example.com",
+        "attempt": 1,
+        "idempotent": false,
+        "targetId": "T-26c1a16e-3748-4779-bd52-86e1725ec42b"
+      }
+    },
+    {
+      "seq": 48,
+      "run_id": "6f20b0d4-283e-46ac-b117-79101b75d343",
+      "at": "2026-09-20T13:14:12.953Z",
+      "action": "Record pushed",
+      "detail": {
+        "recordId": "670e99c1-31b1-4567-8ef7-9deecc499dd9",
+        "email": "sarah.auto@example.com",
+        "attempt": 1,
+        "idempotent": false,
+        "targetId": "T-670e99c1-31b1-4567-8ef7-9deecc499dd9"
+      }
+    },
+    {
+      "seq": 47,
+      "run_id": "6f20b0d4-283e-46ac-b117-79101b75d343",
+      "at": "2026-09-20T13:14:12.646Z",
+      "action": "Record pushed",
+      "detail": {
+        "recordId": "c432bff5-7c53-4325-9132-84fa60ccf5e3",
+        "email": "ada.auto@example.com",
+        "attempt": 1,
+        "idempotent": false,
+        "targetId": "T-c432bff5-7c53-4325-9132-84fa60ccf5e3"
+      }
+    },
+    {
+      "seq": 46,
+      "run_id": "6f20b0d4-283e-46ac-b117-79101b75d343",
+      "at": "2026-09-20T13:14:12.428Z",
+      "action": "Validation complete",
+      "detail": {
+        "ready": 3,
+        "review": 0,
+        "duplicates": 0
+      }
+    },
+    {
+      "seq": 45,
+      "run_id": "6f20b0d4-283e-46ac-b117-79101b75d343",
+      "at": "2026-09-20T13:14:12.262Z",
+      "action": "Mapped source",
+      "detail": {
+        "file": "semantic-auto.csv",
+        "mapping": [
+          {
+            "header": "Staff identification number",
+            "field": "employee_id",
+            "proposedField": "employee_id",
+            "status": "automatic",
+            "confidence": 0.951,
+            "reason": "Corroborating model and value evidence meet all policy gates.",
+            "suggestions": [
+              {
+                "field": "employee_id",
+                "score": 0.9244327116826213
+              },
+              {
+                "field": "email",
+                "score": 0.45330982601824765
+              },
+              {
+                "field": "department",
+                "score": 0.44631017887095903
+              }
+            ],
+            "llmProposal": {
+              "target_field": "employee_id",
+              "confidence": 1.0,
+              "reason": "The source column 'Staff identification number' is directly mapped to the 'employee_id' field, which is the primary key for employee records."
+            },
+            "evidence": {
+              "alias": false,
+              "semanticSimilarity": 0.924,
+              "topTwoMargin": 0.471,
+              "llmAgreement": true,
+              "llmConfidence": 1.0,
+              "valueCompatibility": 1.0,
+              "samples": 3,
+              "ambiguousHeader": false,
+              "policy": "evidence-v3",
+              "providerStatus": "ready",
+              "providerError": null
+            }
+          },
+          {
+            "header": "First Name",
+            "field": "first_name",
+            "proposedField": "first_name",
+            "status": "automatic",
+            "confidence": 1.0,
+            "reason": "Unique explicit alias. Values are independently validated after normalization.",
+            "suggestions": [],
+            "evidence": {
+              "alias": true,
+              "patternCompatibility": 1.0,
+              "policy": "alias-v2"
+            }
+          },
+          {
+            "header": "Last Name",
+            "field": "last_name",
+            "proposedField": "last_name",
+            "status": "automatic",
+            "confidence": 1.0,
+            "reason": "Unique explicit alias. Values are independently validated after normalization.",
+            "suggestions": [],
+            "evidence": {
+              "alias": true,
+              "patternCompatibility": 1.0,
+              "policy": "alias-v2"
+            }
+          },
+          {
+            "header": "Employee work email address",
+            "field": "email",
+            "proposedField": "email",
+            "status": "automatic",
+            "confidence": 1.0,
+            "reason": "Corroborating model and value evidence meet all policy gates.",
+            "suggestions": [
+              {
+                "field": "email",
+                "score": 1.0
+              },
+              {
+                "field": "employee_id",
+                "score": 0.560135498889459
+              },
+              {
+                "field": "first_name",
+                "score": 0.42216325386749987
+              }
+            ],
+            "llmProposal": {
+              "target_field": "email",
+              "confidence": 1.0,
+              "reason": "The source column is directly related to the email address, which is a required field for the target fields."
+            },
+            "evidence": {
+              "alias": false,
+              "semanticSimilarity": 1.0,
+              "topTwoMargin": 0.44,
+              "llmAgreement": true,
+              "llmConfidence": 1.0,
+              "valueCompatibility": 1.0,
+              "samples": 3,
+              "ambiguousHeader": false,
+              "policy": "evidence-v3",
+              "providerStatus": "ready",
+              "providerError": null
+            }
+          },
+          {
+            "header": "Employee birthday",
+            "field": "date_of_birth",
+            "proposedField": "date_of_birth",
+            "status": "automatic",
+            "confidence": 0.932,
+            "reason": "Corroborating model and value evidence meet all policy gates.",
+            "suggestions": [
+              {
+                "field": "date_of_birth",
+                "score": 0.8959518318857866
+              },
+              {
+                "field": "employee_id",
+                "score": 0.5215153961498946
+              },
+              {
+                "field": "first_name",
+                "score": 0.5164207849925622
+              }
+            ],
+            "llmProposal": {
+              "target_field": "date_of_birth",
+              "confidence": 1.0,
+              "reason": "The source column 'Employee birthday' is directly mapped to the target field 'date_of_birth' as it pertains to the employee's birth date, which is a specific and unambiguous field in the context of employment and account status."
+            },
+            "evidence": {
+              "alias": false,
+              "semanticSimilarity": 0.896,
+              "topTwoMargin": 0.374,
+              "llmAgreement": true,
+              "llmConfidence": 1.0,
+              "valueCompatibility": 1.0,
+              "samples": 3,
+              "ambiguousHeader": false,
+              "policy": "evidence-v3",
+              "providerStatus": "ready",
+              "providerError": null
+            }
+          },
+          {
+            "header": "Department",
+            "field": "department",
+            "proposedField": "department",
+            "status": "automatic",
+            "confidence": 1.0,
+            "reason": "Unique explicit alias. Values are independently validated after normalization.",
+            "suggestions": [],
+            "evidence": {
+              "alias": true,
+              "patternCompatibility": 1.0,
+              "policy": "alias-v2"
+            }
+          },
+          {
+            "header": "Employment Status",
+            "field": "employment_status",
+            "proposedField": "employment_status",
+            "status": "automatic",
+            "confidence": 1.0,
+            "reason": "Unique explicit alias. Values are independently validated after normalization.",
+            "suggestions": [],
+            "evidence": {
+              "alias": true,
+              "patternCompatibility": 1.0,
+              "policy": "alias-v2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seq": 44,
+      "run_id": "6f20b0d4-283e-46ac-b117-79101b75d343",
+      "at": "2026-09-20T13:13:55.322Z",
+      "action": "Source profiled",
+      "detail": {
+        "file": "semantic-auto.csv",
+        "profile": {
+          "rowCount": 3,
+          "columns": [
+            {
+              "name": "Staff identification number",
+              "type": "string",
+              "count": 3,
+              "nonEmpty": 3,
+              "missing": 0,
+              "unique": 3,
+              "samples": [
+                "E101",
+                "E102",
+                "E103"
+              ],
+              "patterns": {
+                "email": 0.0,
+                "date": 0.0,
+                "identifier": 1.0,
+                "text": 1.0,
+                "employment_status": 0.0,
+                "account_status": 0.0
+              }
+            },
+            {
+              "name": "First Name",
+              "type": "string",
+              "count": 3,
+              "nonEmpty": 3,
+              "missing": 0,
+              "unique": 3,
+              "samples": [
+                "Ada",
+                "Sarah",
+                "Maya"
+              ],
+              "patterns": {
+                "email": 0.0,
+                "date": 0.0,
+                "identifier": 0.0,
+                "text": 1.0,
+                "employment_status": 0.0,
+                "account_status": 0.0
+              }
+            },
+            {
+              "name": "Last Name",
+              "type": "string",
+              "count": 3,
+              "nonEmpty": 3,
+              "missing": 0,
+              "unique": 3,
+              "samples": [
+                "Lovelace",
+                "Jones",
+                "Patel"
+              ],
+              "patterns": {
+                "email": 0.0,
+                "date": 0.0,
+                "identifier": 0.0,
+                "text": 1.0,
+                "employment_status": 0.0,
+                "account_status": 0.0
+              }
+            },
+            {
+              "name": "Employee work email address",
+              "type": "email",
+              "count": 3,
+              "nonEmpty": 3,
+              "missing": 0,
+              "unique": 3,
+              "samples": [
+                "ada.auto@example.com",
+                "sarah.auto@example.com",
+                "maya.auto@example.com"
+              ],
+              "patterns": {
+                "email": 1.0,
+                "date": 0.0,
+                "identifier": 0.0,
+                "text": 1.0,
+                "employment_status": 0.0,
+                "account_status": 0.0
+              }
+            },
+            {
+              "name": "Employee birthday",
+              "type": "date",
+              "count": 3,
+              "nonEmpty": 3,
+              "missing": 0,
+              "unique": 3,
+              "samples": [
+                "1990-01-13",
+                "1988-11-21",
+                "1992-05-17"
+              ],
+              "patterns": {
+                "email": 0.0,
+                "date": 1.0,
+                "identifier": 0.0,
+                "text": 0.0,
+                "employment_status": 0.0,
+                "account_status": 0.0
+              }
+            },
+            {
+              "name": "Department",
+              "type": "string",
+              "count": 3,
+              "nonEmpty": 3,
+              "missing": 0,
+              "unique": 3,
+              "samples": [
+                "Engineering",
+                "Sales",
+                "Finance"
+              ],
+              "patterns": {
+                "email": 0.0,
+                "date": 0.0,
+                "identifier": 0.0,
+                "text": 1.0,
+                "employment_status": 0.0,
+                "account_status": 0.0
+              }
+            },
+            {
+              "name": "Employment Status",
+              "type": "string",
+              "count": 3,
+              "nonEmpty": 3,
+              "missing": 0,
+              "unique": 2,
+              "samples": [
+                "Active",
+                "Leave"
+              ],
+              "patterns": {
+                "email": 0.0,
+                "date": 0.0,
+                "identifier": 0.0,
+                "text": 1.0,
+                "employment_status": 1.0,
+                "account_status": 0.667
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 43,
+      "run_id": "6f20b0d4-283e-46ac-b117-79101b75d343",
+      "at": "2026-09-20T13:13:55.271Z",
+      "action": "Agent started",
+      "detail": {
+        "reason": "Infer source mappings, normalize safe values, validate, reconcile identities"
+      }
+    }
+  ],
+  "llm": {
+    "provider": "Ollama",
+    "model": "qwen2.5:1.5b",
+    "status": "ready",
+    "error": null
+  },
+  "model": {
+    "status": "ready",
+    "name": "Xenova/all-MiniLM-L6-v2",
+    "error": null
+  }
+}
